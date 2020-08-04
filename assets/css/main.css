@@ -1,0 +1,12 @@
+.fill-height {
+  /* 100vh - toolbar */
+  min-height: calc(100vh - 88px );
+}
+
+.green-background {
+  background-color: #2BC866;
+}
+
+.dark-background {
+  background-color: #121212;
+}

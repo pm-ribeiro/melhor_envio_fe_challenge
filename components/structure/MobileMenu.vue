@@ -2,7 +2,7 @@
   <div class="text-center">
     <v-menu offset-y>
       <template v-slot:activator="{ on, attrs }">
-        <v-btn icon large color="white" v-bind="attrs" v-on="on">
+        <v-btn icon x-large color="white" v-bind="attrs" v-on="on">
           <v-icon>mdi-menu</v-icon>
         </v-btn>
       </template>
@@ -23,10 +23,9 @@
 export default {
   data: () => ({
     items: [
-      { title: 'Click Me' },
-      { title: 'Click Me' },
-      { title: 'Click Me' },
-      { title: 'Click Me 2' },
+      { title: 'Melhor envio' },
+      { title: 'Login' },
+      { title: 'Cadastre-se' },
     ],
   }),
   methods: {

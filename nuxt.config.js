@@ -32,7 +32,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['@/assets/css/main.css'],
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
@@ -69,13 +69,13 @@ export default {
    ** https://github.com/nuxt-community/vuetify-module
    */
   vuetify: {
-    customVariables: ['~/assets/variables.scss', '~/assets/main.scss'],
+    customVariables: ['~/assets/css/variables.scss'],
     theme: {
       dark: false,
       themes: {
         dark: {
           primary: '#2BC866',
-          secondary: '#000000',
+          secondary: '#121212',
           accent: '#2BC866',
           info: colors.teal.lighten1,
           warning: colors.amber.base,
@@ -87,7 +87,6 @@ export default {
           secondary: '#ffffff',
           accent: '#2BC866',
           info: '#3598DC',
-          accent: '#2BC866',
           error: '#b71c1c',
         },
       },

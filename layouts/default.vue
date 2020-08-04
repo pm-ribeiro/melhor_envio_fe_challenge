@@ -2,7 +2,7 @@
   <v-app>
     <PublicToolbar></PublicToolbar>
     <v-main>
-      <v-container fluid>
+      <v-container fluid class="fill-height pa-0">
         <nuxt />
       </v-container>
     </v-main>
