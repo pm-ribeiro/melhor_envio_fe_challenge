@@ -1,6 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+:root {
+  --public-footer-max-height: 245px;
+  --footer-max-height: 10px;
+}
+
+* {
+  font-family: 'Lato', 'Roboto', sans-serif !important;
+}
+
+.v-application {
+  font-family: 'Lato', 'Roboto', sans-serif !important;
+}
+
+.me-title {
+  font-family: 'Lato', 'Roboto', sans-serif !important;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 43px;
+}
+
+.me-mobile-title {
+  font-family: 'Lato', 'Roboto', sans-serif !important;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+}
+
+.me-subtitle {
+  font-family: 'Lato', 'Roboto', sans-serif !important;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.me-mobile-subtitle {
+  font-family: 'Lato', 'Roboto', sans-serif !important;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+}
+
+
 .fill-height {
-  /* 100vh - toolbar */
-  min-height: calc(100vh - 88px );
+  /* 100vh - toolbar - footer */
+  min-height: calc(100vh - 88px - var(--public-footer-max-height));
 }
 
 .green-background {
@@ -9,4 +59,8 @@
 
 .dark-background {
   background-color: #121212;
+}
+
+.red_border {
+  border: 1px solid red;
 }

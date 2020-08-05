@@ -1,7 +1,7 @@
 <template>
   <v-footer absolute app padless color="secondary">
     <v-card flat tile width="100%">
-      <v-card-text class="py-10">
+      <v-card-text class="py-xl-10">
         <v-row no-gutters align="center" justify="center">
           <v-col
             v-if="!mobile"
