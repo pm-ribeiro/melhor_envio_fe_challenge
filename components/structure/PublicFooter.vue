@@ -11,6 +11,9 @@
             <span>sic mundus creatus est.</span>
           </v-col>
           <v-col :cols="mobile ? '12' : '6'">
+            <p v-if="$vuetify.breakpoint.mobile" class="text-center mt-3">
+              transportadoras
+            </p>
             <v-row no-gutters align="center" justify="center">
               <div v-for="(logo, index) in logos" :key="index" class="ma-8">
                 <v-img
