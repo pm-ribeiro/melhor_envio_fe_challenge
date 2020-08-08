@@ -44,7 +44,12 @@
             Um serviço de rastreio de encomendas totalmente gratuito.
           </p>
 
-          <v-btn depressed color="secondary" class="primary--text">
+          <v-btn
+            depressed
+            color="secondary"
+            class="primary--text"
+            to="/detailed_tracking/1"
+          >
             quero utilizar
           </v-btn>
         </div>
