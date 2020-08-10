@@ -1,6 +1,9 @@
 <template>
   <!-- mobile -->
-  <div v-if="$vuetify.breakpoint.mobile" class="text-center mobile-bkg py-10">
+  <div
+    v-if="$vuetify.breakpoint.mobile"
+    class="text-center background-image py-10"
+  >
     <h1 class="me-mobile-title mb-3 white--text">
       O serviço de rastreio <br />
       exclusivo do Melhor Envio.
@@ -28,8 +31,7 @@
     v-else
     align="center"
     justify="center"
-    class="fill-height"
-    :class="$vuetify.theme.dark ? 'dark-background' : 'green-background'"
+    class="fill-height py-lg-16 background-image"
   >
     <v-col :cols="$vuetify.breakpoint.mobile ? 12 : 5">
       <v-row no-gutters align="center" justify="center">
@@ -52,6 +54,7 @@
           >
             quero utilizar
           </v-btn>
+          <!-- https://auth.melhorrastreio.com.br/login -->
         </div>
       </v-row>
     </v-col>
@@ -92,7 +95,7 @@ export default {
   background-color: white;
 }
 
-.mobile-bkg {
+.background-image {
   width: 100%;
   min-height: 84vh;
   background-image: url('../assets/images/mobile_bkg.svg');

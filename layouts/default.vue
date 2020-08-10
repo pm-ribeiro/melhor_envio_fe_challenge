@@ -1,12 +1,12 @@
 <template>
   <v-app>
-    <PublicToolbar></PublicToolbar>
+    <Toolbar></Toolbar>
     <v-main>
       <v-container fluid class="fill-height pa-0">
         <nuxt />
       </v-container>
     </v-main>
-    <PublicFooter></PublicFooter>
+    <Footer></Footer>
   </v-app>
 </template>
 

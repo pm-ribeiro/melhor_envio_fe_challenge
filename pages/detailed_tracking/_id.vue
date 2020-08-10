@@ -1,51 +1,20 @@
 <template>
   <v-row no-gutters align="start" justify="center" class="fill-height">
-    <v-col v-if="pageLoaded" cols="6" class="pt-16">
-      <h1>Informações de Rastreio</h1>
-      <v-row no-gutters align="center" justify="start" class="mt-6">
-        <div
-          v-for="(item, index) in defaultStatus"
-          :key="index"
-          class="d-flex justify-start align-start"
-        >
-          <div class="d-flex flex-column align-center justify-center">
-            <v-img
-              :src="require(`@/assets/images/icons/${item.iconPath}`)"
-              height="36"
-              contain
-            />
-            <h4 class="mt-3">{{ item.text }}</h4>
-            <h6 class="mt-1">{{ item.completeDate }}</h6>
-          </div>
-          <div
-            v-if="index < defaultStatus.length - 1"
-            class="progress-divider"
-          ></div>
-        </div>
-      </v-row>
-      {{ orderData.events }}
-      <v-data-table
-        :headers="headers"
-        :items="orderData.events"
-        hide-default-footer
-        class="elevation-1"
-      >
-        <template v-slot:item.status="{ item }">
-          <div class="d-flex align-center justify-start py-3">
-            <img
-              :src="changeIcons(item.status)"
-              height="38"
-              width="38"
-              :color="$dicts.iconTableColor[item.status]"
-            />
-            <div class="d-flex flex-column align-start justify-start ml-6">
-              {{ $dicts.orderStatusTable[item.status] }} <br />
-              {{ item.created_at }}
-            </div>
-          </div>
-        </template>
-      </v-data-table>
+    <v-col v-if="pageLoaded" cols="6" xl="6" lg="10" class="py-16">
+      <h1 class="mb-8">Informações de Rastreio</h1>
+
+      <ProgressLinear :events="orderData.events"></ProgressLinear>
+
+      <ProgressTable :events="orderData.events" class="mt-10"></ProgressTable>
     </v-col>
+    <div v-else class="py-16 text-center">
+      <h3 class="mb-6">Carregando dados ...</h3>
+      <v-progress-circular
+        indeterminate
+        color="primary"
+        size="48"
+      ></v-progress-circular>
+    </div>
   </v-row>
 </template>
 
@@ -55,28 +24,6 @@ export default {
     return {
       pageLoaded: false,
       orderData: {},
-      defaultStatus: [
-        {
-          iconPath: 'coletado.svg',
-          text: 'Coleta',
-        },
-        {
-          iconPath: 'postado.svg',
-          text: 'Postado',
-        },
-        {
-          iconPath: 'encaminhado.svg',
-          text: 'Encaminhado',
-        },
-        {
-          iconPath: 'saiu_entrega.svg',
-          text: 'Saiu para entrega',
-        },
-        {
-          iconPath: 'entregue.svg',
-          text: 'Entregue',
-        },
-      ],
       headers: [
         {
           text: 'Status',
@@ -90,7 +37,6 @@ export default {
   },
   beforeMount() {
     this.fetchOrderData()
-    this.pageLoaded = true
   },
   methods: {
     async fetchOrderData() {
@@ -99,13 +45,11 @@ export default {
           'https://demo5836336.mockable.io/tracking%3Fsearch=PM371835103BR'
         )
         this.orderData = orderData.data.data
-        console.log(this.orderData)
+        this.$router.push(this.orderData.tracking)
+        this.pageLoaded = true
       } catch (error) {
         console.log(error)
       }
-    },
-    changeIcons(path) {
-      return path ? require(`@/assets/images/icons/${path}.svg`) : ''
     },
   },
 }
