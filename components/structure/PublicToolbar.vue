@@ -2,7 +2,7 @@
   <v-app-bar fixed flat app color="primary" height="88" class="px-xl-10">
     <nuxt-link to="/">
       <v-img
-        :src="getAssetsImage(melhorEnvioLogo)"
+        :src="getAssetsImage('melhor_envio_white.svg')"
         alt="Melhor Envio"
         width="120"
         contain
@@ -46,13 +46,6 @@
 
 <script>
 export default {
-  computed: {
-    melhorEnvioLogo() {
-      return this.$vuetify.theme.dark
-        ? 'melhor_envio.svg'
-        : 'melhor_envio_white.svg'
-    },
-  },
   methods: {
     getAssetsImage(path) {
       return path ? require(`@/assets/images/logos/${path}`) : ''

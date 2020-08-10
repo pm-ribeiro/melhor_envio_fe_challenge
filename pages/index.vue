@@ -54,7 +54,6 @@
           >
             quero utilizar
           </v-btn>
-          <!-- https://auth.melhorrastreio.com.br/login -->
         </div>
       </v-row>
     </v-col>
