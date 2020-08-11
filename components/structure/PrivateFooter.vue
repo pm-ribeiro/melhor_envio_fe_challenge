@@ -2,7 +2,7 @@
   <v-footer padless color="primary">
     <v-col cols="12">
       <v-row no-gutters align="start" justify="space-around" class="py-10">
-        <v-col :cols="mobile ? '12' : '4'">
+        <v-col :cols="mobile ? '12' : '4'" class="pa-3">
           <v-row no-gutters align="start" justify="center">
             <div class="d-flex flex-column align-start private-footer__links">
               <a href="#" class="secondary--text">melhor rastreio</a>
@@ -11,7 +11,7 @@
             </div>
           </v-row>
         </v-col>
-        <v-col :cols="mobile ? '12' : '4'">
+        <v-col :cols="mobile ? '12' : '4'" class="pa-3">
           <v-row no-gutters align="start" justify="center">
             <div class="d-flex flex-column align-center">
               <span class="secondary--text mb-2">feito com &hearts; por</span>
@@ -24,7 +24,7 @@
             </div>
           </v-row>
         </v-col>
-        <v-col :cols="mobile ? '12' : '4'">
+        <v-col :cols="mobile ? '12' : '4'" class="pa-3">
           <v-row no-gutters align="start" justify="center">
             <div class="d-flex flex-column align-start private-footer__links">
               <p class="secondary--text ma-0 mb-1 font-weight-bold">
