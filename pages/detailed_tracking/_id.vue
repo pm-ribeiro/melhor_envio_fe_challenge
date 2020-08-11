@@ -1,9 +1,12 @@
 <template>
   <v-row no-gutters align="start" justify="center" class="fill-height">
-    <v-col v-if="pageLoaded" cols="6" xl="6" lg="10" class="py-16">
+    <v-col v-if="pageLoaded" cols="11" xl="6" lg="10" class="py-16">
       <h1 class="mb-8">Informações de Rastreio</h1>
 
-      <ProgressLinear :events="orderData.events"></ProgressLinear>
+      <ProgressLinear
+        v-if="!mobile"
+        :events="orderData.events"
+      ></ProgressLinear>
 
       <ProgressTable :events="orderData.events" class="mt-10"></ProgressTable>
     </v-col>
@@ -34,6 +37,11 @@ export default {
         { text: 'Movimentação', value: 'location', sortable: false },
       ],
     }
+  },
+  computed: {
+    mobile() {
+      return this.$vuetify.breakpoint.mobile
+    },
   },
   beforeMount() {
     this.fetchOrderData()
