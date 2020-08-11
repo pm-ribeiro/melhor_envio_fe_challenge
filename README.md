@@ -9,7 +9,7 @@
 ### Instruções de navegação
 A fins de demonstração o botão "Quero utilizar" na página home desktop leva a página de Informações do rastreamento onde é feita a requisição para a api disponibilizada, também é possível acessar a página pela rota '/detailed_tracking/PM371835103BR'
 
-Uma deminstração da aplicação desktop pode ser acessada pelo link: [demonstração da aplicação](https://drive.google.com/file/d/1ndAci6FsFlBObWL3h0da4bTIxagIIdwx/view)
+Uma demonstração da aplicação desktop pode ser acessada pelo link: [demonstração da aplicação](https://drive.google.com/file/d/1ndAci6FsFlBObWL3h0da4bTIxagIIdwx/view)
 
 
 ### Tecnologias utilizadas
