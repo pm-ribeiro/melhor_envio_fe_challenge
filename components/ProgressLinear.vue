@@ -93,7 +93,7 @@
     <v-row v-if="events" no-gutters align="start" justify="space-between">
       <!-- coletado -->
       <div class="d-flex flex-column align-center justify-center">
-        <h4 class="mt-3">Coletado</h4>
+        <h4 class="mt-3" :class="coletado ? 'primary--text' : ''">Coletado</h4>
         <h6 class="mt-1">
           {{ currentStatusText(coletado) }}
         </h6>
@@ -101,7 +101,7 @@
 
       <!-- postado -->
       <div class="d-flex flex-column align-center justify-center">
-        <h4 class="mt-3">Postado</h4>
+        <h4 class="mt-3" :class="postado ? 'primary--text' : ''">Postado</h4>
         <h6 v-if="postado" class="mt-1">
           {{ currentStatusText(postado) }}
         </h6>
@@ -109,7 +109,9 @@
 
       <!-- encaminhado -->
       <div class="d-flex flex-column align-center justify-center">
-        <h4 class="mt-3">Encaminhado</h4>
+        <h4 class="mt-3" :class="encaminhado ? 'primary--text' : ''">
+          Encaminhado
+        </h4>
         <h6 class="mt-1">
           {{ currentStatusText(encaminhado) }}
         </h6>
@@ -117,7 +119,9 @@
 
       <!-- saiu para entrega -->
       <div class="d-flex flex-column align-center justify-center">
-        <h4 class="mt-3">Saiu para entrega</h4>
+        <h4 class="mt-3" :class="saiu_entrega ? 'primary--text' : ''">
+          Saiu para entrega
+        </h4>
         <h6 class="mt-1">
           {{ currentStatusText(saiu_entrega) }}
         </h6>
@@ -125,7 +129,7 @@
 
       <!-- entregue -->
       <div class="d-flex flex-column align-center justify-center">
-        <h4 class="mt-3">Entregue</h4>
+        <h4 class="mt-3" :class="entregue ? 'primary--text' : ''">Entregue</h4>
         <h6 class="mt-1">
           {{ currentStatusText(entregue) }}
         </h6>
