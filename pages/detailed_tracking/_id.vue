@@ -6,6 +6,7 @@
       <ProgressLinear
         v-if="!mobile"
         :events="orderData.events"
+        :current-status="orderData.status"
       ></ProgressLinear>
 
       <ProgressTable :events="orderData.events" class="mt-10"></ProgressTable>

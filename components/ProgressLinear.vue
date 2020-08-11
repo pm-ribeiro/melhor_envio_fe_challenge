@@ -95,7 +95,7 @@
       <div class="d-flex flex-column align-center justify-center">
         <h4 class="mt-3">Coletado</h4>
         <h6 class="mt-1">
-          {{ coletado ? coletado.created_at : '' }}
+          {{ currentStatusText(coletado) }}
         </h6>
       </div>
 
@@ -103,7 +103,7 @@
       <div class="d-flex flex-column align-center justify-center">
         <h4 class="mt-3">Postado</h4>
         <h6 v-if="postado" class="mt-1">
-          {{ postado ? postado.created_at : '' }}
+          {{ currentStatusText(postado) }}
         </h6>
       </div>
 
@@ -111,7 +111,7 @@
       <div class="d-flex flex-column align-center justify-center">
         <h4 class="mt-3">Encaminhado</h4>
         <h6 class="mt-1">
-          {{ encaminhado ? encaminhado.created_at : '' }}
+          {{ currentStatusText(encaminhado) }}
         </h6>
       </div>
 
@@ -119,7 +119,7 @@
       <div class="d-flex flex-column align-center justify-center">
         <h4 class="mt-3">Saiu para entrega</h4>
         <h6 class="mt-1">
-          {{ saiu_entrega ? saiu_entrega.created_at : '' }}
+          {{ currentStatusText(saiu_entrega) }}
         </h6>
       </div>
 
@@ -127,7 +127,7 @@
       <div class="d-flex flex-column align-center justify-center">
         <h4 class="mt-3">Entregue</h4>
         <h6 class="mt-1">
-          {{ entregue ? entregue.created_at : '' }}
+          {{ currentStatusText(entregue) }}
         </h6>
       </div>
     </v-row>
@@ -140,6 +140,10 @@ export default {
     events: {
       type: Array,
       default: null,
+    },
+    currentStatus: {
+      type: String,
+      default: '',
     },
   },
   data() {
@@ -170,6 +174,15 @@ export default {
         (event) => event.status === 'saiu_entrega'
       )
       this.entregue = this.events.find((event) => event.status === 'entregue')
+    },
+    currentStatusText(event) {
+      if (!event) {
+        return ''
+      } else if (event.created_at && event.status === this.currentStatus) {
+        return 'Atualmente'
+      } else if (event.created_at) {
+        return event.created_at
+      }
     },
   },
 }
