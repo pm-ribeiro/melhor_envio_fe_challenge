@@ -31,7 +31,7 @@
                 Melhor Rastreio 2018 <br />
                 Todos os direitos reservados.
               </p>
-              <a href="#">Termos de uso </a>
+              <a href="#" class="secondary--text">Termos de uso </a>
               <div class="d-flex align-start mt-3">
                 <v-icon color="secondary" class="mr-3">mdi-facebook</v-icon>
                 <v-icon color="secondary">mdi-twitter</v-icon>
