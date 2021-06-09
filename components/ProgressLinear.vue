@@ -169,24 +169,38 @@ export default {
         : ''
     },
     currentEvents() {
-      this.coletado = this.events.find((event) => event.status === 'coletado')
-      this.postado = this.events.find((event) => event.status === 'postado')
-      this.encaminhado = this.events.find(
-        (event) => event.status === 'encaminhado'
-      )
-      this.saiu_entrega = this.events.find(
-        (event) => event.status === 'saiu_entrega'
-      )
-      this.entregue = this.events.find((event) => event.status === 'entregue')
+      console.table(this.events)
+
+      this.events.forEach((item) => {
+        switch (item.status) {
+          case 'coletado':
+            this.coletado = item
+            break
+          case 'postado':
+            this.postado = item
+            break
+          case 'encaminhado':
+            this.encaminhado = item
+            break
+          case 'saiu_entrega':
+            this.saiu_entrega = item
+            break
+          case 'entregue':
+            this.entregue = item
+            break
+        }
+      })
     },
     currentStatusText(event) {
       if (!event) {
         return ''
-      } else if (event.created_at && event.status === this.currentStatus) {
-        return 'Atualmente'
-      } else if (event.created_at) {
-        return event.created_at
       }
+
+      if (event.status === this.currentStatus) {
+        return 'Atualmente'
+      }
+
+      return event.created_at
     },
   },
 }
