@@ -50,14 +50,15 @@ export default {
   methods: {
     async fetchOrderData() {
       try {
-        const orderData = await this.$axios.get(
+        const { data: order } = await this.$axios.get(
           'https://demo5836336.mockable.io/tracking%3Fsearch=PM371835103BR'
         )
-        this.orderData = orderData.data.data
+
+        this.orderData = order.data
         this.$router.push(this.orderData.tracking)
         this.pageLoaded = true
       } catch (error) {
-        console.log(error)
+        console.error(error)
       }
     },
   },

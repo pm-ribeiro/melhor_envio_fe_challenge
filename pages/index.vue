@@ -83,8 +83,8 @@ export default {
   display: flex;
   flex-flow: column;
   align-content: flex-start;
-  justify-content: start;
-  align-items: start;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .h-divider {
