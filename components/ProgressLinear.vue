@@ -169,8 +169,6 @@ export default {
         : ''
     },
     currentEvents() {
-      console.table(this.events)
-
       this.events.forEach((item) => {
         switch (item.status) {
           case 'coletado':
